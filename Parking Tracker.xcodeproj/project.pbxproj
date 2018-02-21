@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29D6E607203C965F007DE643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E606203C965F007DE643 /* AppDelegate.swift */; };
-		29D6E609203C965F007DE643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E608203C965F007DE643 /* ViewController.swift */; };
+		29D6E609203C965F007DE643 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E608203C965F007DE643 /* LoginVC.swift */; };
 		29D6E60C203C965F007DE643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D6E60A203C965F007DE643 /* Main.storyboard */; };
 		29D6E60F203C965F007DE643 /* Parking_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E60D203C965F007DE643 /* Parking_Tracker.xcdatamodeld */; };
 		29D6E611203C965F007DE643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D6E610203C965F007DE643 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		29D6E603203C965F007DE643 /* Parking Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parking Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D6E606203C965F007DE643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29D6E608203C965F007DE643 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29D6E608203C965F007DE643 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		29D6E60B203C965F007DE643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29D6E60E203C965F007DE643 /* Parking_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Parking_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		29D6E610203C965F007DE643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				29D6E606203C965F007DE643 /* AppDelegate.swift */,
-				29D6E608203C965F007DE643 /* ViewController.swift */,
+				29D6E608203C965F007DE643 /* LoginVC.swift */,
 				29D6E60A203C965F007DE643 /* Main.storyboard */,
 				29D6E610203C965F007DE643 /* Assets.xcassets */,
 				29D6E612203C965F007DE643 /* LaunchScreen.storyboard */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D6E60F203C965F007DE643 /* Parking_Tracker.xcdatamodeld in Sources */,
-				29D6E609203C965F007DE643 /* ViewController.swift in Sources */,
+				29D6E609203C965F007DE643 /* LoginVC.swift in Sources */,
 				29D6E607203C965F007DE643 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
