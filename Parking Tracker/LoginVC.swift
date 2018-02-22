@@ -42,10 +42,14 @@ import UIKit
 
 class LoginVC: UIViewController {
     
+    
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Log In"
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -56,6 +60,17 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func btnLoginAction(_ sender: UIButton) {
+        print("Hey login")
+    }
+    
+    @IBAction func btnRegisterAction(_ sender: UIButton) {
+        let registerSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let registerVC = registerSB.instantiateViewController(withIdentifier: "registerScreen")
+        navigationController?.pushViewController(registerVC, animated: true)
+        print("Hey register")
+        
+    }
 }
 

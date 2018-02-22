@@ -13,6 +13,7 @@
 		29D6E60F203C965F007DE643 /* Parking_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E60D203C965F007DE643 /* Parking_Tracker.xcdatamodeld */; };
 		29D6E611203C965F007DE643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D6E610203C965F007DE643 /* Assets.xcassets */; };
 		29D6E614203C965F007DE643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D6E612203C965F007DE643 /* LaunchScreen.storyboard */; };
+		29D6E641203E141F007DE643 /* registerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E640203E141F007DE643 /* registerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		29D6E610203C965F007DE643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29D6E613203C965F007DE643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29D6E615203C965F007DE643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29D6E640203E141F007DE643 /* registerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				29D6E612203C965F007DE643 /* LaunchScreen.storyboard */,
 				29D6E615203C965F007DE643 /* Info.plist */,
 				29D6E60D203C965F007DE643 /* Parking_Tracker.xcdatamodeld */,
+				29D6E640203E141F007DE643 /* registerVC.swift */,
 			);
 			path = "Parking Tracker";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D6E60F203C965F007DE643 /* Parking_Tracker.xcdatamodeld in Sources */,
+				29D6E641203E141F007DE643 /* registerVC.swift in Sources */,
 				29D6E609203C965F007DE643 /* LoginVC.swift in Sources */,
 				29D6E607203C965F007DE643 /* AppDelegate.swift in Sources */,
 			);
