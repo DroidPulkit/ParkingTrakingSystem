@@ -137,6 +137,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sio-Td-VdI"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="VC2-Qg-RG8" id="Cwi-eM-IYo"/>
+                        <outlet property="txtPassword" destination="JdV-sD-xEg" id="C6R-vc-g7J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

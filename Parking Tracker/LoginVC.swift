@@ -74,8 +74,8 @@ extension UITextField {
 class LoginVC: UIViewController {
     
     
-    @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet var txtEmail: UITextField!
+    @IBOutlet var txtPassword: UITextField!
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        self.navigationItem.title = "Log In"
@@ -93,7 +93,18 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func btnLoginAction(_ sender: UIButton) {
-        print("Hey login")
+        
+        let Email = txtEmail.text
+        let Password = txtPassword.text
+        
+        
+        if(Email == "test" && Password == "test"){
+            let infoAlert = UIAlertController(title: "Login Successfull", message: "You are Authenticated", preferredStyle: .alert)
+            
+            infoAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(infoAlert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func btnRegisterAction(_ sender: UIButton) {
@@ -101,7 +112,6 @@ class LoginVC: UIViewController {
         
         let registerVC = registerSB.instantiateViewController(withIdentifier: "registerScreen")
         navigationController?.pushViewController(registerVC, animated: true)
-        print("Hey register")
         
     }
 }
