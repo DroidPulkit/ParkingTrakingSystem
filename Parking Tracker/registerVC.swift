@@ -12,6 +12,11 @@ class registerVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Register"
+        
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
 
     override func viewDidLoad() {
