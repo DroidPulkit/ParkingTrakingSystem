@@ -45,14 +45,9 @@ class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         return self.cityList[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = cityList[row]
-        return NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.fontNames(forFamilyName: "Chalkboard SE")])
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         //add data in picker
@@ -63,6 +58,11 @@ class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = cityList[row]
+        return NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.fontNames(forFamilyName: "Chalkboard SE")])
     }
     
 
