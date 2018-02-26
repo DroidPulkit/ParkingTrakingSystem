@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @IBDesignable extension UIButton {
     
@@ -104,6 +105,23 @@ class LoginVC: UIViewController {
             infoAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             
             self.present(infoAlert, animated: true, completion: nil)
+        }
+        
+        Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
+            if let error = error {
+                let infoAlert = UIAlertController(title: "Error", message: String(describing: error), preferredStyle: .alert)
+                
+                infoAlert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: nil))
+                
+                self.present(infoAlert, animated: true, completion: nil)
+                return
+            }
+            
+            let homeSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let homeVC = homeSB.instantiateViewController(withIdentifier: "homeScreen")
+            self.navigationController?.pushViewController(homeVC, animated: true)
+
         }
     }
     

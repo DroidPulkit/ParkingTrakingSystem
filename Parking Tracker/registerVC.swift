@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -69,14 +70,26 @@ class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @objc private func displayValues(){
         self.selectedCityIndex = self.cityPicker.selectedRow(inComponent: 0)
         
-        let allData: String = "\(self.txtName.text!) \n \(self.txtEmail.text!) \n \(self.txtPassword.text) \n \(self.txtContactNumber.text!) \n \(self.cityList[selectedCityIndex]) \n \(self.txtCarPlateNumber.text!)"
+        let allData: String = "\(self.txtName.text!) \n \(self.txtEmail.text!) \n \(self.txtPassword.text!) \n \(self.txtContactNumber.text!) \n \(self.cityList[selectedCityIndex]) \n \(self.txtCarPlateNumber.text!)"
         
         //Action Sheet
         let infoAlert = UIAlertController(title: "Verify your details", message: allData, preferredStyle: .actionSheet)
         
         infoAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        infoAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: nil))
+        infoAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {_ in self.register()}))
         self.present(infoAlert, animated: true, completion: nil)
     }
 
+    func register() {
+        //to do
+        Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
+            let alert = UIAlertController(title: "Registeration", message: "User registered", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.backScreen()}))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func backScreen() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
