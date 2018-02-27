@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2933FDCA204082880006EA66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2933FDC9204082880006EA66 /* GoogleService-Info.plist */; };
 		2947036C20408A5B00C94ADE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2947036B20408A5B00C94ADE /* HomeVC.swift */; };
+		297B3FCD2045927100A83C91 /* parkingManualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297B3FCC2045927100A83C91 /* parkingManualVC.swift */; };
+		297B3FCF204594F400A83C91 /* manual.html in Resources */ = {isa = PBXBuildFile; fileRef = 297B3FCE204594F400A83C91 /* manual.html */; };
 		29D6E607203C965F007DE643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E606203C965F007DE643 /* AppDelegate.swift */; };
 		29D6E609203C965F007DE643 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E608203C965F007DE643 /* LoginVC.swift */; };
 		29D6E60C203C965F007DE643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D6E60A203C965F007DE643 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		2933FDC9204082880006EA66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2947036B20408A5B00C94ADE /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		297B3FCC2045927100A83C91 /* parkingManualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parkingManualVC.swift; sourceTree = "<group>"; };
+		297B3FCE204594F400A83C91 /* manual.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = manual.html; sourceTree = "<group>"; };
 		29D6E603203C965F007DE643 /* Parking Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parking Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D6E606203C965F007DE643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29D6E608203C965F007DE643 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				29D6E640203E141F007DE643 /* registerVC.swift */,
 				2933FDC9204082880006EA66 /* GoogleService-Info.plist */,
 				2947036B20408A5B00C94ADE /* HomeVC.swift */,
+				297B3FCC2045927100A83C91 /* parkingManualVC.swift */,
+				297B3FCE204594F400A83C91 /* manual.html */,
 			);
 			path = "Parking Tracker";
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				297B3FCF204594F400A83C91 /* manual.html in Resources */,
 				29D6E614203C965F007DE643 /* LaunchScreen.storyboard in Resources */,
 				2933FDCA204082880006EA66 /* GoogleService-Info.plist in Resources */,
 				29D6E611203C965F007DE643 /* Assets.xcassets in Resources */,
@@ -239,6 +246,7 @@
 				29D6E60F203C965F007DE643 /* Parking_Tracker.xcdatamodeld in Sources */,
 				2947036C20408A5B00C94ADE /* HomeVC.swift in Sources */,
 				29D6E641203E141F007DE643 /* registerVC.swift in Sources */,
+				297B3FCD2045927100A83C91 /* parkingManualVC.swift in Sources */,
 				29D6E609203C965F007DE643 /* LoginVC.swift in Sources */,
 				29D6E607203C965F007DE643 /* AppDelegate.swift in Sources */,
 			);

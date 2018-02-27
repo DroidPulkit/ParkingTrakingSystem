@@ -23,10 +23,20 @@ class HomeVC: UIViewController {
 //        Auth.auth().removeStateDidChangeListener(handle!)
 //    }
 
+    @IBOutlet var parkingManualView: UIView!
+    @IBOutlet var logoutView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapParkingManual = UITapGestureRecognizer(target: self, action: #selector(parkingTapped(tapGestureRecognizer:)))
+        parkingManualView.addGestureRecognizer(tapParkingManual)
+        parkingManualView.isUserInteractionEnabled = true
+        
+        let tapLogout = UITapGestureRecognizer(target: self, action: #selector(logoutTapped(tapGestureRecognizer:)))
+        logoutView.addGestureRecognizer(tapLogout)
+        logoutView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,15 +44,32 @@ class HomeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func parkingTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        //_ = tapGestureRecognizer.view as! UIView
+        
+        let parkingSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let parkingVC = parkingSB.instantiateViewController(withIdentifier: "parkingScreen")
+        navigationController?.pushViewController(parkingVC, animated: true)
     }
-    */
+    
+    @objc func logoutTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            moveToFirstScreen()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+
+    }
+    
+    func moveToFirstScreen() {
+        let loginSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "loginScreen")
+        //navigationController?.viewControllers.removeAll()
+        navigationController?.pushViewController(loginVC, animated: true)
+    }
 
 }

@@ -84,7 +84,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -132,5 +132,6 @@ class LoginVC: UIViewController {
         navigationController?.pushViewController(registerVC, animated: true)
         
     }
+
 }
 

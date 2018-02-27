@@ -49,7 +49,7 @@ class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
         
         //add data in picker
         self.cityPicker.delegate = self
