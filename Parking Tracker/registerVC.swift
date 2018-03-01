@@ -70,11 +70,29 @@ class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @objc private func displayValues(){
         self.selectedCityIndex = self.cityPicker.selectedRow(inComponent: 0)
         
-        let allData: String = "\(self.txtName.text!) \n \(self.txtEmail.text!) \n \(self.txtPassword.text!) \n \(self.txtContactNumber.text!) \n \(self.cityList[selectedCityIndex]) \n \(self.txtCarPlateNumber.text!)"
+        let name = self.txtName.text!
+        let email = self.txtEmail.text!
+        let pass = self.txtPassword.text!
+        let number = self.txtContactNumber.text!
+        let city = self.cityList[selectedCityIndex]
+        let carNo = self.txtCarPlateNumber.text!
+        
+        let allData: String = "\(name) \n \(email) \n \(pass) \n \(number) \n \(city) \n \(carNo)"
+        
+        if (name.isEmpty || email.isEmpty || pass.isEmpty || number.isEmpty || city.isEmpty || carNo.isEmpty){
+            let infoAlert = UIAlertController(title: "Error", message: "Fields cannot be empty", preferredStyle: .alert)
+            infoAlert.addAction(UIAlertAction(title: "Try Again", style: .destructive, handler: nil))
+            self.present(infoAlert, animated: true, completion: nil)
+            return
+        } else if (number.count != 10){
+            let infoAlert = UIAlertController(title: "Error", message: "Contact number is not of 10 digits", preferredStyle: .alert)
+            infoAlert.addAction(UIAlertAction(title: "Try Again", style: .destructive, handler: nil))
+            self.present(infoAlert, animated: true, completion: nil)
+            return
+        }
         
         //Action Sheet
         let infoAlert = UIAlertController(title: "Verify your details", message: allData, preferredStyle: .actionSheet)
-        
         infoAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         infoAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {_ in self.register()}))
         self.present(infoAlert, animated: true, completion: nil)
@@ -83,6 +101,12 @@ class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     func register() {
         //to do
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
+            if let error = error {
+                let infoAlert = UIAlertController(title: "Error", message: String(error.localizedDescription), preferredStyle: .alert)
+                infoAlert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: nil))
+                self.present(infoAlert, animated: true, completion: nil)
+                return
+            }
             let alert = UIAlertController(title: "Registeration", message: "User registered", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.backScreen()}))
             self.present(alert, animated: true, completion: nil)

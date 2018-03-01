@@ -99,30 +99,29 @@ class LoginVC: UIViewController {
         let Password = txtPassword.text
         
         
-        if(Email == "test" && Password == "test"){
-            let infoAlert = UIAlertController(title: "Login Successfull", message: "You are Authenticated", preferredStyle: .alert)
-            
-            infoAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            
-            self.present(infoAlert, animated: true, completion: nil)
+        if (Email?.isEmpty)! || (Password?.isEmpty)! {
+            showError()
         }
         
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
             if let error = error {
-                let infoAlert = UIAlertController(title: "Error", message: String(describing: error), preferredStyle: .alert)
-                
+                let infoAlert = UIAlertController(title: "Error", message: String(error.localizedDescription), preferredStyle: .alert)
                 infoAlert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: nil))
-                
                 self.present(infoAlert, animated: true, completion: nil)
                 return
             }
             
             let homeSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
             let homeVC = homeSB.instantiateViewController(withIdentifier: "homeScreen")
             self.navigationController?.pushViewController(homeVC, animated: true)
 
         }
+    }
+    
+    func showError(){
+        let infoAlert = UIAlertController(title: "Error", message: "Email and password field cannot be empty", preferredStyle: .alert)
+        infoAlert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: nil))
+        self.present(infoAlert, animated: true, completion: nil)
     }
     
     @IBAction func btnRegisterAction(_ sender: UIButton) {

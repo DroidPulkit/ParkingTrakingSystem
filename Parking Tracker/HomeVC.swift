@@ -62,13 +62,18 @@ class HomeVC: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-
     }
     
     func moveToFirstScreen() {
+        
+       // if let navController = self.navigationController {
+            //navController.popToRootViewController(animated: true)
+            //navController.popViewController(animated: true)
+            
+            //navController.popToViewController(, animated: )
+       // }
         let loginSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = loginSB.instantiateViewController(withIdentifier: "loginScreen")
-        //navigationController?.viewControllers.removeAll()
         navigationController?.pushViewController(loginVC, animated: true)
     }
 
