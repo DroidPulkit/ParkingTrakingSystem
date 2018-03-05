@@ -134,7 +134,7 @@ class registerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         //userRef is reference to the /users/$userID
         let userRef = self.ref.child("users").child(userID!)
         //This line below adds the data of the user
-        userRef.setValue(["name" : self.txtName.text!, "number" : self.txtContactNumber.text!, "city" : self.cityList[selectedCityIndex], "car_number" : txtCarPlateNumber.text! ])
+        userRef.setValue(["name" : self.txtName.text!,"email" : self.txtEmail.text!, "number" : self.txtContactNumber.text!, "city" : self.cityList[selectedCityIndex], "car_number" : txtCarPlateNumber.text! ])
         self.backScreen()
     }
     //Back screen

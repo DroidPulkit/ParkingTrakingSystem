@@ -25,11 +25,14 @@ class HomeVC: UIViewController {
 
     @IBOutlet var parkingManualView: UIView!
     @IBOutlet var logoutView: UIView!
+    @IBOutlet var parkingReceiptView: UIView!
+    @IBOutlet var userProfileView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         let tapParkingManual = UITapGestureRecognizer(target: self, action: #selector(parkingTapped(tapGestureRecognizer:)))
         parkingManualView.addGestureRecognizer(tapParkingManual)
         parkingManualView.isUserInteractionEnabled = true
@@ -37,6 +40,14 @@ class HomeVC: UIViewController {
         let tapLogout = UITapGestureRecognizer(target: self, action: #selector(logoutTapped(tapGestureRecognizer:)))
         logoutView.addGestureRecognizer(tapLogout)
         logoutView.isUserInteractionEnabled = true
+        
+        let tapParkingReciept = UITapGestureRecognizer(target: self, action: #selector(parkingReceiptTapped(tapGestureRecognizer:)))
+        parkingReceiptView.addGestureRecognizer(tapParkingReciept)
+        parkingReceiptView.isUserInteractionEnabled = true
+        
+        let tapUserProfile = UITapGestureRecognizer(target: self, action: #selector(userProfileTapped(tapGestureRecognizer:)))
+        userProfileView.addGestureRecognizer(tapUserProfile)
+        userProfileView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +73,18 @@ class HomeVC: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    @objc func parkingReceiptTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let parkingReceiptSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let parkingReceiptVC = parkingReceiptSB.instantiateViewController(withIdentifier: "parkingReceiptScreen")
+        navigationController?.pushViewController(parkingReceiptVC, animated: true)
+    }
+    
+    @objc func userProfileTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let parkingReceiptSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let parkingReceiptVC = parkingReceiptSB.instantiateViewController(withIdentifier: "userProfileScreen")
+        navigationController?.pushViewController(parkingReceiptVC, animated: true)
     }
     
     func moveToFirstScreen() {
