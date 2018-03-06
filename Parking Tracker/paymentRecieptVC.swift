@@ -162,14 +162,13 @@ class paymentRecieptVC: UIViewController, UIPickerViewDelegate, UIPickerViewData
         let paymentMethod = self.paymentMethods[indexOfPaymentMethod]
         let paymentAmount = self.lblPaymentAmount.text!
         
-        
-        
         //This get's the user's id i.e. $userID
         let userID = Auth.auth().currentUser?.uid
         //userRef is reference to the /users/$userID
         let parkingReceiptRef = self.ref.child("parkingReceipt").child(userID!)
+        
         //This line below adds the data of the user
-        parkingReceiptRef.setValue(["email" : email, "carNo" : carNo, "carCompany" : carCompany, "carColor" : carColor, "noOfHours" : noOfHours, "dateTime" : dateTime, "lotNo" : lotNo, "spotNo" : spotNo, "paymentMethod" : paymentMethod, "paymentAmount" : paymentAmount])
+        parkingReceiptRef.childByAutoId().setValue(["email" : email, "carNo" : carNo, "carCompany" : carCompany, "carColor" : carColor, "noOfHours" : noOfHours, "dateTime" : dateTime, "lotNo" : lotNo, "spotNo" : spotNo, "paymentMethod" : paymentMethod, "paymentAmount" : paymentAmount])
         self.nextScreen()
     }
     

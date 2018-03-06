@@ -28,6 +28,7 @@ class HomeVC: UIViewController {
     @IBOutlet var parkingReceiptView: UIView!
     @IBOutlet var userProfileView: UIView!
     @IBOutlet var supportView: UIView!
+    @IBOutlet var parkingReportView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +54,22 @@ class HomeVC: UIViewController {
         let tapSupport = UITapGestureRecognizer(target: self, action: #selector(supportTapped(tapGestureRecognizer:)))
         supportView.addGestureRecognizer(tapSupport)
         supportView.isUserInteractionEnabled = true
+        
+        let tapParkingReport = UITapGestureRecognizer(target: self, action: #selector(parkingReportTapped(tapGestureRecognizer:)))
+        parkingReportView.addGestureRecognizer(tapParkingReport)
+        parkingReportView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func parkingReportTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let parkingSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let parkingVC = parkingSB.instantiateViewController(withIdentifier: "parkingReportScreen")
+        navigationController?.pushViewController(parkingVC, animated: true)
     }
     
     @objc func supportTapped(tapGestureRecognizer: UITapGestureRecognizer)

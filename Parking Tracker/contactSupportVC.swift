@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CallKit
+import MessageUI
 
 class contactSupportVC: UIViewController {
 
@@ -20,6 +22,10 @@ class contactSupportVC: UIViewController {
         let tapPhone = UITapGestureRecognizer(target: self, action: #selector(phoneTapped(tapGestureRecognizer:)))
         phoneView.addGestureRecognizer(tapPhone)
         phoneView.isUserInteractionEnabled = true
+        
+        let emailPhone = UITapGestureRecognizer(target: self, action: #selector(emailTapped(tapGestureRecognizer:)))
+        emailView.addGestureRecognizer(emailPhone)
+        emailView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,14 +37,41 @@ class contactSupportVC: UIViewController {
     {
         print("Tapped phone")
         
-//        if let phoneCallURL = URL(string: "tel://4169776267") {
-//            let application:UIApplication = UIApplication.shared
-//            if (application.canOpenURL(phoneCallURL)) {
-//                application.open(phoneCallURL, options: [:], completionHandler: nil)
-//            }
-//        }
-        //UIApplication.shared.canOpenURL(URL(string: "tel://1234567890")!)
-        //UIApplication.sharedApplication().openURL(NSURL(string: "tel://1234567890"))
+        print("calling.....")
+        let url = URL(string: "tel://+14169776261")
+        
+        if UIApplication.shared.canOpenURL(url!){
+            if #available(iOS 10, *){
+                UIApplication.shared.open(url!)
+            } else
+            {
+                UIApplication.shared.openURL(url!)
+            }
+        }
+    }
+    
+    @objc func emailTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        print("Tapped email")
+        
+        if MFMailComposeViewController.canSendMail() {
+            let EmailPicker = MFMailComposeViewController()
+            
+            EmailPicker.mailComposeDelegate = self
+            EmailPicker.setToRecipients(["support@parkme.com"])
+            EmailPicker.setSubject("Test Email")
+            EmailPicker.setMessageBody("Hello, how are you!", isHTML: true)
+            
+            self.present(EmailPicker, animated: true, completion: nil)
+        } else {
+            print("can't sent email....")
+        }
     }
 
+}
+
+extension contactSupportVC: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }

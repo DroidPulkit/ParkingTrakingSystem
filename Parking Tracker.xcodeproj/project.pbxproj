@@ -11,6 +11,10 @@
 		2947036C20408A5B00C94ADE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2947036B20408A5B00C94ADE /* HomeVC.swift */; };
 		297B3FCD2045927100A83C91 /* parkingManualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297B3FCC2045927100A83C91 /* parkingManualVC.swift */; };
 		297B3FCF204594F400A83C91 /* manual.html in Resources */ = {isa = PBXBuildFile; fileRef = 297B3FCE204594F400A83C91 /* manual.html */; };
+		29941BF3204E205600A60834 /* DetailParkingRecieptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29941BF2204E205600A60834 /* DetailParkingRecieptVC.swift */; };
+		29BB72D6204DA6B500B3B5EF /* ParkingReportTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB72D5204DA6B500B3B5EF /* ParkingReportTVC.swift */; };
+		29BB72D8204DA6CD00B3B5EF /* ParkingReportTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB72D7204DA6CD00B3B5EF /* ParkingReportTVCell.swift */; };
+		29BB72DA204DD53B00B3B5EF /* ParkingPaymentReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB72D9204DD53B00B3B5EF /* ParkingPaymentReceipt.swift */; };
 		29D54767204CCB3D008B149C /* contactSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D54766204CCB3D008B149C /* contactSupportVC.swift */; };
 		29D6E607203C965F007DE643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E606203C965F007DE643 /* AppDelegate.swift */; };
 		29D6E609203C965F007DE643 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D6E608203C965F007DE643 /* LoginVC.swift */; };
@@ -31,6 +35,10 @@
 		2947036B20408A5B00C94ADE /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		297B3FCC2045927100A83C91 /* parkingManualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parkingManualVC.swift; sourceTree = "<group>"; };
 		297B3FCE204594F400A83C91 /* manual.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = manual.html; sourceTree = "<group>"; };
+		29941BF2204E205600A60834 /* DetailParkingRecieptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailParkingRecieptVC.swift; sourceTree = "<group>"; };
+		29BB72D5204DA6B500B3B5EF /* ParkingReportTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingReportTVC.swift; sourceTree = "<group>"; };
+		29BB72D7204DA6CD00B3B5EF /* ParkingReportTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingReportTVCell.swift; sourceTree = "<group>"; };
+		29BB72D9204DD53B00B3B5EF /* ParkingPaymentReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPaymentReceipt.swift; sourceTree = "<group>"; };
 		29D54766204CCB3D008B149C /* contactSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactSupportVC.swift; sourceTree = "<group>"; };
 		29D6E603203C965F007DE643 /* Parking Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parking Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D6E606203C965F007DE643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,16 +98,20 @@
 				29D6E612203C965F007DE643 /* LaunchScreen.storyboard */,
 				29D6E615203C965F007DE643 /* Info.plist */,
 				29D6E60D203C965F007DE643 /* Parking_Tracker.xcdatamodeld */,
+				297B3FCC2045927100A83C91 /* parkingManualVC.swift */,
 				29D6E640203E141F007DE643 /* registerVC.swift */,
 				2933FDC9204082880006EA66 /* GoogleService-Info.plist */,
 				2947036B20408A5B00C94ADE /* HomeVC.swift */,
-				297B3FCC2045927100A83C91 /* parkingManualVC.swift */,
 				297B3FCE204594F400A83C91 /* manual.html */,
 				29EB0F33204C7C5E00C7F0C6 /* paymentRecieptVC.swift */,
 				29EB0F35204CA1C200C7F0C6 /* parkingReceiptDetailVC.swift */,
 				29EB0F37204CAD2800C7F0C6 /* userProfileVC.swift */,
 				29EB0F39204CB4D500C7F0C6 /* userProfileEditVC.swift */,
 				29D54766204CCB3D008B149C /* contactSupportVC.swift */,
+				29BB72D5204DA6B500B3B5EF /* ParkingReportTVC.swift */,
+				29BB72D7204DA6CD00B3B5EF /* ParkingReportTVCell.swift */,
+				29941BF2204E205600A60834 /* DetailParkingRecieptVC.swift */,
+				29BB72D9204DD53B00B3B5EF /* ParkingPaymentReceipt.swift */,
 			);
 			path = "Parking Tracker";
 			sourceTree = "<group>";
@@ -260,13 +272,17 @@
 			files = (
 				29D6E60F203C965F007DE643 /* Parking_Tracker.xcdatamodeld in Sources */,
 				29EB0F3A204CB4D500C7F0C6 /* userProfileEditVC.swift in Sources */,
+				29BB72D8204DA6CD00B3B5EF /* ParkingReportTVCell.swift in Sources */,
 				2947036C20408A5B00C94ADE /* HomeVC.swift in Sources */,
 				29EB0F34204C7C5E00C7F0C6 /* paymentRecieptVC.swift in Sources */,
 				29D54767204CCB3D008B149C /* contactSupportVC.swift in Sources */,
+				29BB72DA204DD53B00B3B5EF /* ParkingPaymentReceipt.swift in Sources */,
 				29EB0F38204CAD2800C7F0C6 /* userProfileVC.swift in Sources */,
+				29BB72D6204DA6B500B3B5EF /* ParkingReportTVC.swift in Sources */,
 				29EB0F36204CA1C200C7F0C6 /* parkingReceiptDetailVC.swift in Sources */,
 				29D6E641203E141F007DE643 /* registerVC.swift in Sources */,
 				297B3FCD2045927100A83C91 /* parkingManualVC.swift in Sources */,
+				29941BF3204E205600A60834 /* DetailParkingRecieptVC.swift in Sources */,
 				29D6E609203C965F007DE643 /* LoginVC.swift in Sources */,
 				29D6E607203C965F007DE643 /* AppDelegate.swift in Sources */,
 			);
