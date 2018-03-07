@@ -55,6 +55,10 @@ class paymentRecieptVC: UIViewController, UIPickerViewDelegate, UIPickerViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dateTime.setValue(UIColor.white, forKeyPath: "textColor")
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "background.png"), for: .default)
+        
         self.carColorPicker.dataSource = self
         self.carColorPicker.delegate = self
         
@@ -116,6 +120,24 @@ class paymentRecieptVC: UIViewController, UIPickerViewDelegate, UIPickerViewData
         }
         if(pickerView.tag == 3) {
             payementLogo.image = paymentMethodsImages[row]        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        if (pickerView.tag == 1){
+            let titleData = companyList[row]
+            return NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        } else if (pickerView.tag == 2){
+            let titleData = carColorList[row]
+            return NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        }else {
+            let titleData = paymentMethods[row]
+            return NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+            
+        }
+        
+        //Adding title to the pickerview and then adding attributes like making it white and adding custom font to it.
+        
     }
     
     

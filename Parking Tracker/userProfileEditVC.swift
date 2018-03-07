@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class userProfileEditVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     @IBOutlet var txtName: UITextField!
     @IBOutlet var txtCarPlateNumber: UITextField!
     @IBOutlet var txtContactNumber: UITextField!
@@ -25,7 +25,7 @@ class userProfileEditVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.cityPicker.dataSource = self
         self.cityPicker.delegate = self
@@ -59,7 +59,7 @@ class userProfileEditVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let btnSave = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(updateData))
         navigationItem.rightBarButtonItem = btnSave
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,7 +91,7 @@ class userProfileEditVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let homeVC = homeSB.instantiateViewController(withIdentifier: "homeScreen")
         navigationController?.pushViewController(homeVC, animated: true)
     }
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -103,5 +103,10 @@ class userProfileEditVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return cityList[row]
     }
-
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = cityList[row]
+        return NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+    }
+    
 }

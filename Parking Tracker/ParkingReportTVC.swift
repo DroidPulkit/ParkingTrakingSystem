@@ -103,21 +103,24 @@ class ParkingReportTVC: UITableViewController {
         let parkingReceipt = listOfParkingReceipts[indexPath.row]
         let DetailParkingSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DetailParkingVC = DetailParkingSB.instantiateViewController(withIdentifier: "DetailParkingScreen") as! DetailParkingRecieptVC
-        print("printing whole list")
-        print(listOfParkingReceipts[1].carColor)
-        print(String(describing: parkingReceipt))
+        print("printing the first parking. (if exists)")
         
-        DetailParkingVC.strEmail = parkingReceipt.email
-        DetailParkingVC.strCarColor = parkingReceipt.carColor
-        DetailParkingVC.strCarCompanyName = parkingReceipt.carCompany
-        DetailParkingVC.strCarPlateNumber = parkingReceipt.carNo
-        DetailParkingVC.strDateTime = parkingReceipt.dateTime
-        DetailParkingVC.strLotNumber = parkingReceipt.lotNo
-        DetailParkingVC.strSpotNumber = parkingReceipt.spotNo
-        DetailParkingVC.strParkingHours = parkingReceipt.noOfHours
-        DetailParkingVC.strPaymentAmount = parkingReceipt.paymentAmount
-        DetailParkingVC.strPaymentMethod = parkingReceipt.paymentMethod
- 
+        if  (listOfParkingReceipts.count > 0) {
+            print(listOfParkingReceipts[0].carColor)
+            print(String(describing: parkingReceipt))
+            
+            
+            DetailParkingVC.strEmail = parkingReceipt.email
+            DetailParkingVC.strCarColor = parkingReceipt.carColor
+            DetailParkingVC.strCarCompanyName = parkingReceipt.carCompany
+            DetailParkingVC.strCarPlateNumber = parkingReceipt.carNo
+            DetailParkingVC.strDateTime = parkingReceipt.dateTime
+            DetailParkingVC.strLotNumber = parkingReceipt.lotNo
+            DetailParkingVC.strSpotNumber = parkingReceipt.spotNo
+            DetailParkingVC.strParkingHours = parkingReceipt.noOfHours
+            DetailParkingVC.strPaymentAmount = parkingReceipt.paymentAmount
+            DetailParkingVC.strPaymentMethod = parkingReceipt.paymentMethod
+        }
         
         self.navigationController?.pushViewController(DetailParkingVC, animated: true)
     }

@@ -35,6 +35,8 @@ class HomeVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         let tapParkingManual = UITapGestureRecognizer(target: self, action: #selector(parkingTapped(tapGestureRecognizer:)))
         parkingManualView.addGestureRecognizer(tapParkingManual)
         parkingManualView.isUserInteractionEnabled = true

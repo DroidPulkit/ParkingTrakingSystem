@@ -18,6 +18,8 @@ class parkingManualVC: UIViewController {
         // Do any additional setup after loading the view.
         loadManualPage()
         
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "background.png"), for: .default)
+        
     }
 
     override func didReceiveMemoryWarning() {
