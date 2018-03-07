@@ -12,6 +12,7 @@ class ParkingReportTVCell: UITableViewCell {
 
     @IBOutlet var lblCarNumber: UILabel!
     @IBOutlet var lblDate: UILabel!
+    @IBOutlet var lblHours: UILabel!
     
     
     

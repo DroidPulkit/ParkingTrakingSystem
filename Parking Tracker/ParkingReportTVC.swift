@@ -19,7 +19,7 @@ class ParkingReportTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        tableView.rowHeight = 100
+        tableView.rowHeight = 140
         
         tableView.backgroundView = UIImageView(image: UIImage(named: "background.png"))
 
@@ -88,12 +88,12 @@ class ParkingReportTVC: UITableViewController {
         let startDate = deFormatter.date(from: dateTime)
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "dd-MM-yyyy HH:MM"
         let onlyDate = formatter.string(from: startDate!)
         
         cell.lblDate.text = onlyDate
         //cell.lblDate.text = listOfParkingReceipts[indexPath.row].dateTime
-        
+        cell.lblHours.text = " \(listOfParkingReceipts[indexPath.row].noOfHours)"
         
         return cell
     }

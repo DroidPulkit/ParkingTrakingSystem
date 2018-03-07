@@ -12,6 +12,17 @@ import WebKit
 class parkingManualVC: UIViewController {
 
     @IBOutlet var myWebView: WKWebView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "ParkMe Manual"
+        
+        //Making the title white
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
