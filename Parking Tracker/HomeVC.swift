@@ -29,7 +29,7 @@ class HomeVC: UIViewController {
     @IBOutlet var userProfileView: UIView!
     @IBOutlet var supportView: UIView!
     @IBOutlet var parkingReportView: UIView!
-    
+    @IBOutlet var locationView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,6 +58,10 @@ class HomeVC: UIViewController {
         let tapParkingReport = UITapGestureRecognizer(target: self, action: #selector(parkingReportTapped(tapGestureRecognizer:)))
         parkingReportView.addGestureRecognizer(tapParkingReport)
         parkingReportView.isUserInteractionEnabled = true
+        
+        let taplocation = UITapGestureRecognizer(target: self, action: #selector(locationTapped(tapGestureRecognizer:)))
+        locationView.addGestureRecognizer(taplocation)
+        locationView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,6 +113,13 @@ class HomeVC: UIViewController {
         let parkingReceiptSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let parkingReceiptVC = parkingReceiptSB.instantiateViewController(withIdentifier: "userProfileScreen")
         navigationController?.pushViewController(parkingReceiptVC, animated: true)
+    }
+    
+    @objc func locationTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let locationSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let locationVC = locationSB.instantiateViewController(withIdentifier: "locationScreen")
+        navigationController?.pushViewController(locationVC, animated: true)
     }
     
     func moveToFirstScreen() {

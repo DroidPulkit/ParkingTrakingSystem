@@ -27,6 +27,8 @@
 		29EB0F36204CA1C200C7F0C6 /* parkingReceiptDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB0F35204CA1C200C7F0C6 /* parkingReceiptDetailVC.swift */; };
 		29EB0F38204CAD2800C7F0C6 /* userProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB0F37204CAD2800C7F0C6 /* userProfileVC.swift */; };
 		29EB0F3A204CB4D500C7F0C6 /* userProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB0F39204CB4D500C7F0C6 /* userProfileEditVC.swift */; };
+		9BF53B0A204EAE1C00B4A35B /* locationsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF53B08204EAE1C00B4A35B /* locationsTVC.swift */; };
+		9BF53B0B204EAE1C00B4A35B /* mapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF53B09204EAE1C00B4A35B /* mapVC.swift */; };
 		DC5F8EEF51486C4D36DFB3F6 /* Pods_Parking_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB740C010E0B9C8176EEBBE /* Pods_Parking_Tracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		29EB0F37204CAD2800C7F0C6 /* userProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfileVC.swift; sourceTree = "<group>"; };
 		29EB0F39204CB4D500C7F0C6 /* userProfileEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfileEditVC.swift; sourceTree = "<group>"; };
 		70FC8E6379DD7F5386D2447E /* Pods-Parking Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parking Tracker/Pods-Parking Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		9BF53B08204EAE1C00B4A35B /* locationsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = locationsTVC.swift; sourceTree = "<group>"; };
+		9BF53B09204EAE1C00B4A35B /* mapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapVC.swift; sourceTree = "<group>"; };
 		C0272D79340766642B1DB1F2 /* Pods-Parking Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parking Tracker/Pods-Parking Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		DAB740C010E0B9C8176EEBBE /* Pods_Parking_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parking_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +95,8 @@
 		29D6E605203C965F007DE643 /* Parking Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				9BF53B08204EAE1C00B4A35B /* locationsTVC.swift */,
+				9BF53B09204EAE1C00B4A35B /* mapVC.swift */,
 				29D6E606203C965F007DE643 /* AppDelegate.swift */,
 				29D6E608203C965F007DE643 /* LoginVC.swift */,
 				29D6E60A203C965F007DE643 /* Main.storyboard */,
@@ -270,12 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF53B0B204EAE1C00B4A35B /* mapVC.swift in Sources */,
 				29D6E60F203C965F007DE643 /* Parking_Tracker.xcdatamodeld in Sources */,
 				29EB0F3A204CB4D500C7F0C6 /* userProfileEditVC.swift in Sources */,
 				29BB72D8204DA6CD00B3B5EF /* ParkingReportTVCell.swift in Sources */,
 				2947036C20408A5B00C94ADE /* HomeVC.swift in Sources */,
 				29EB0F34204C7C5E00C7F0C6 /* paymentRecieptVC.swift in Sources */,
 				29D54767204CCB3D008B149C /* contactSupportVC.swift in Sources */,
+				9BF53B0A204EAE1C00B4A35B /* locationsTVC.swift in Sources */,
 				29BB72DA204DD53B00B3B5EF /* ParkingPaymentReceipt.swift in Sources */,
 				29EB0F38204CAD2800C7F0C6 /* userProfileVC.swift in Sources */,
 				29BB72D6204DA6B500B3B5EF /* ParkingReportTVC.swift in Sources */,

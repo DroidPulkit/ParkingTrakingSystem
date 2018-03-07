@@ -51,6 +51,8 @@ extension UITextField {
             self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedStringKey.foregroundColor: newValue!])
         }
     }
+
+    
     
     
     @IBInspectable var bottomBorderColor: UIColor? {
@@ -111,11 +113,41 @@ class LoginVC: UIViewController {
                 return
             }
             
+            self.storeLastLogin()
+            
             let homeSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = homeSB.instantiateViewController(withIdentifier: "homeScreen")
             self.navigationController?.pushViewController(homeVC, animated: true)
 
         }
+    }
+    
+    func storeLastLogin() {
+        let date = Date()
+        let formatterForDate = DateFormatter()
+        
+        formatterForDate.dateFormat = "dd-MM-yyyy"
+        
+        let dateStr = formatterForDate.string(from: date)
+        
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        
+        let time : String = "\(hour):\(minutes):\(seconds)"
+        
+        //Firebase stuff
+        var ref: DatabaseReference = Database.database().reference()
+        
+        //This get's the user's id i.e. $userID
+        let userID = Auth.auth().currentUser?.uid
+        //userRef is reference to the /users/$userID
+        let userRef = ref.child("users").child(userID!)
+        //This line below adds the data of the user
+        //var hash = ["lastloginDate" : dateStr, "lastLoginTime" : time]
+        //userRef.updateChildValues([hash])
+        userRef.updateChildValues(["lastLoginDate" : dateStr, "lastLoginTime" : time])
     }
     
     func showError(){
